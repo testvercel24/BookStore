@@ -10,7 +10,7 @@ import { BookDetails, ReviewDetails } from 'src/app/helpers/book';
 })
 export class BookComponent implements OnInit {
   book!: BookDetails;
-  rating: number = 4;
+  rating: number = 0;
   reviewDetails: ReviewDetails[] = [];
   reviewForm!: FormGroup;
   initialUrl: string = '../../../assets/star.png';
@@ -25,6 +25,7 @@ export class BookComponent implements OnInit {
       review: [''],
     });
     this.book = history.state.book;
+    console.log(this.book);
     const storedReview = localStorage.getItem('review');
     if (storedReview) {
       this.reviewDetails = JSON.parse(storedReview);

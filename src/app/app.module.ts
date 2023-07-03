@@ -9,8 +9,9 @@ import { HeaderComponent } from './component/header/header.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SearchPipe } from './pipe/search.pipe';
+import { FilterPipe } from './pipe/filter.pipe';
 @NgModule({
-  declarations: [AppComponent, HomeComponent, BookComponent, HeaderComponent, SearchPipe],
+  declarations: [AppComponent, HomeComponent, BookComponent, HeaderComponent, SearchPipe, FilterPipe],
   imports: [
     BrowserModule,
     AppRoutingModule,
