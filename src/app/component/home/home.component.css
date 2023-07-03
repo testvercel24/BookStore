@@ -1,0 +1,61 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  width: 100vw;
+  height: 100vh;
+}
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  width: 100vw;
+  justify-items: center;
+  max-height: 30rem;
+  min-height: 31rem;
+  scroll-behavior: smooth;
+  row-gap: 1.5rem;
+  overflow-y: scroll;
+  padding-top: 1.5rem;
+}
+.container::-webkit-scrollbar {
+  width: 0.2rem;
+}
+.container::-webkit-scrollbar-track {
+  box-shadow: inset 1 3 5px grey;
+  border-radius: 10px;
+}
+.container::-webkit-scrollbar-thumb {
+  background: #3a3939;
+  border-radius: 10px;
+}
+.container::-webkit-scrollbar-thumb:hover {
+  background: #b30000;
+}
+.book-card-container {
+  max-width: 18rem;
+  min-width: 18rem;
+  max-height: 24rem;
+  border-radius: 0.3rem;
+  box-shadow: 0.1rem 0.1rem 0.5rem 0.1rem;
+}
+.book-card img {
+  width: 10rem;
+  height: 9rem;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+  margin-top: 0.3rem;
+  box-shadow: 0.1rem 0.2rem;
+}
+.book-card h5 {
+  text-overflow: ellipsis;
+  max-width: 14rem;
+  font-size: 1.2rem;
+}
+.book-card p {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

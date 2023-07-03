@@ -1,0 +1,36 @@
+<div class="header">
+  <div class="header-container">
+    <nav class="navbar">
+      <div class="navbar-logo">
+        <img
+          src="../../../assets/booklogo.png"
+          alt=""
+          class="navbar-logo-icon"
+        />
+        <div><h6>Book Store</h6></div>
+      </div>
+      <button class="navbar-toggle" (click)="toggleNavbar()">
+        <img src="../../../assets/menu.svg" alt="" class="toggle-icons" />
+      </button>
+      <div class="navbar-links" [ngClass]="{ active: isNavbarOpen }">
+        <button>Home</button>
+        <button>About</button>
+        <button>Category</button>
+        <button>Service</button>
+        <button>Contact</button>
+      </div>
+    </nav>
+  </div>
+  <div class="search-container">
+    <form [formGroup]="searchForm">
+      <input
+        type="text"
+        formControlName="searchText"
+        class="search-input"
+        placeholder="Search..."
+        (input)="handelSearch()"
+      />
+      <button type="submit" class="search-button">Search</button>
+    </form>
+  </div>
+</div>
