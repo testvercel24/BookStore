@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +11,7 @@ export class HeaderComponent implements OnInit {
   searchForm!: FormGroup;
   isNavbarOpen = false;
   @Output() searchKey = new EventEmitter<string>();
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder, private router: Router) {}
   ngOnInit(): void {
     this.searchForm = this.formBuilder.group({
       searchText: [''],
@@ -22,5 +23,8 @@ export class HeaderComponent implements OnInit {
   handelSearch() {
     const searchText = this.searchForm.get('searchText')!.value;
     this.searchKey.emit(searchText);
+  }
+  navigateToHome() {
+    this.router.navigate(['/home']);
   }
 }

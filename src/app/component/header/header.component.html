@@ -1,19 +1,22 @@
 <div class="header">
   <div class="header-container">
     <nav class="navbar">
-      <div class="navbar-logo">
+      <div class="navbar-logo" (click)="navigateToHome()">
         <img
           src="../../../assets/booklogo.png"
           alt=""
           class="navbar-logo-icon"
+          (click)="navigateToHome()"
         />
-        <div><h6>Book Store</h6></div>
+        <div (click)="navigateToHome()">
+          <h6 (click)="navigateToHome()">Book Store</h6>
+        </div>
       </div>
       <button class="navbar-toggle" (click)="toggleNavbar()">
         <img src="../../../assets/menu.svg" alt="" class="toggle-icons" />
       </button>
       <div class="navbar-links" [ngClass]="{ active: isNavbarOpen }">
-        <button>Home</button>
+        <button (click)="navigateToHome()">Home</button>
         <button>About</button>
         <button>Category</button>
         <button>Service</button>

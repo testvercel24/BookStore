@@ -3,163 +3,161 @@
     <app-header></app-header>
   </div>
   <div class="container">
-    <div class="book-card-container">
-      <div class="book-card">
-        <div class="book-image-container">
-          <img src="{{ book.image }}" alt="" class="book-image" />
+    <div class="book-card">
+      <div class="book-image-container">
+        <img src="{{ book.image }}" alt="" class="book-image" />
+      </div>
+      <div class="book-details">
+        <div class="title-container">
+          <h6>{{ book.title }}</h6>
+          <div>
+            <img src="../../../assets/starfill.png" alt="" />
+            <img src="../../../assets/starfill.png" alt="" />
+            <img src="../../../assets/starfill.png" alt="" />
+            <img src="../../../assets/star.png" alt="" />
+            <img src="../../../assets/star.png" alt="" />
+          </div>
+          <div class="author-container">
+            <p><b>Author: </b>{{ book.author }}</p>
+          </div>
         </div>
-        <div class="book-details">
-          <div class="title-container">
-            <h6>{{ book.title }}</h6>
+        <div class="description-container">
+          <p>{{ book.description }}</p>
+        </div>
+        <div class="book-specification">
+          <h6>Book Specifications</h6>
+          <div class="specifications">
             <div>
-              <img src="../../../assets/starfill.png" alt="" />
-              <img src="../../../assets/starfill.png" alt="" />
-              <img src="../../../assets/starfill.png" alt="" />
-              <img src="../../../assets/star.png" alt="" />
-              <img src="../../../assets/star.png" alt="" />
+              <p>Language: English</p>
+              <p>Publisher: No Publisher</p>
+              <p>publishing Date:</p>
             </div>
-            <div class="author-container">
-              <p><b>Author: </b>{{ book.author }}</p>
-            </div>
-          </div>
-          <div class="description-container">
-            <p>{{ book.description }}</p>
-          </div>
-          <div class="book-specification">
-            <h6>Book Specifications</h6>
-            <div class="specifications">
-              <div>
-                <p>Language: English</p>
-                <p>Publisher: No Publisher</p>
-                <p>publishing Date:</p>
-              </div>
-              <div>
-                <p>Total Pages:150</p>
-              </div>
+            <div>
+              <p>Total Pages:150</p>
             </div>
           </div>
         </div>
       </div>
-      <div class="review-container">
-        <div class="write-review">
-          <h6>Review and Rating</h6>
-          <form [formGroup]="reviewForm" (ngSubmit)="onSubmit(book)">
-            <p>Enter your name</p>
-            <input type="text" formControlName="name" placeholder="name" />
-            <p>Write your review</p>
-            <textarea
-              placeholder="write your review"
-              formControlName="review"
-            ></textarea>
-            <p>Give your rating</p>
-            <div class="give-rating">
-              <img
-                [src]="
-                  rating >= 1
-                    ? '../../../assets/starfill.png'
-                    : '../../../assets/star.png'
-                "
-                [class.filled]="true"
-                alt=""
-                (click)="productRating(1)"
-              />
-              <img
-                [src]="
-                  rating >= 2
-                    ? '../../../assets/starfill.png'
-                    : '../../../assets/star.png'
-                "
-                [class.filled]="true"
-                alt=""
-                (click)="productRating(2)"
-              />
-              <img
-                [src]="
-                  rating >= 3
-                    ? '../../../assets/starfill.png'
-                    : '../../../assets/star.png'
-                "
-                [class.filled]="true"
-                alt=""
-                (click)="productRating(3)"
-              />
-              <img
-                [src]="
-                  rating >= 4
-                    ? '../../../assets/starfill.png'
-                    : '../../../assets/star.png'
-                "
-                [class.filled]="true"
-                alt=""
-                (click)="productRating(4)"
-              />
-              <img
-                [src]="
-                  rating >= 5
-                    ? '../../../assets/starfill.png'
-                    : '../../../assets/star.png'
-                "
-                [class.filled]="true"
-                alt=""
-                (click)="productRating(5)"
-              />
-            </div>
-            <button type="submit">Submit</button>
-          </form>
-        </div>
-        <div class="review">
-          <div
-            class="review-card"
-            *ngFor="let review of reviewDetails | filter : book.title"
-          >
-            <h6>{{ review.name }}</h6>
+    </div>
+    <div class="review-container">
+      <div class="write-review">
+        <h6>Review and Rating</h6>
+        <form [formGroup]="reviewForm" (ngSubmit)="onSubmit(book)">
+          <p>Enter your name</p>
+          <input type="text" formControlName="name" placeholder="name" />
+          <p>Write your review</p>
+          <textarea
+            placeholder="write your review"
+            formControlName="review"
+          ></textarea>
+          <p>Give your rating</p>
+          <div class="give-rating">
             <img
               [src]="
-                review.rating >= 1
+                rating >= 1
                   ? '../../../assets/starfill.png'
                   : '../../../assets/star.png'
               "
               [class.filled]="true"
               alt=""
+              (click)="productRating(1)"
             />
             <img
               [src]="
-                review.rating >= 2
+                rating >= 2
                   ? '../../../assets/starfill.png'
                   : '../../../assets/star.png'
               "
               [class.filled]="true"
               alt=""
+              (click)="productRating(2)"
             />
             <img
               [src]="
-                review.rating >= 3
+                rating >= 3
                   ? '../../../assets/starfill.png'
                   : '../../../assets/star.png'
               "
               [class.filled]="true"
               alt=""
+              (click)="productRating(3)"
             />
             <img
               [src]="
-                review.rating >= 4
+                rating >= 4
                   ? '../../../assets/starfill.png'
                   : '../../../assets/star.png'
               "
               [class.filled]="true"
               alt=""
+              (click)="productRating(4)"
             />
             <img
               [src]="
-                review.rating >= 5
+                rating >= 5
                   ? '../../../assets/starfill.png'
                   : '../../../assets/star.png'
               "
               [class.filled]="true"
               alt=""
+              (click)="productRating(5)"
             />
-            <p>{{ review.review }}</p>
           </div>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+      <div class="review">
+        <div
+          class="review-card"
+          *ngFor="let review of reviewDetails | filter : book.title"
+        >
+          <h6>{{ review.name }}</h6>
+          <img
+            [src]="
+              review.rating >= 1
+                ? '../../../assets/starfill.png'
+                : '../../../assets/star.png'
+            "
+            [class.filled]="true"
+            alt=""
+          />
+          <img
+            [src]="
+              review.rating >= 2
+                ? '../../../assets/starfill.png'
+                : '../../../assets/star.png'
+            "
+            [class.filled]="true"
+            alt=""
+          />
+          <img
+            [src]="
+              review.rating >= 3
+                ? '../../../assets/starfill.png'
+                : '../../../assets/star.png'
+            "
+            [class.filled]="true"
+            alt=""
+          />
+          <img
+            [src]="
+              review.rating >= 4
+                ? '../../../assets/starfill.png'
+                : '../../../assets/star.png'
+            "
+            [class.filled]="true"
+            alt=""
+          />
+          <img
+            [src]="
+              review.rating >= 5
+                ? '../../../assets/starfill.png'
+                : '../../../assets/star.png'
+            "
+            [class.filled]="true"
+            alt=""
+          />
+          <p>{{ review.review }}</p>
         </div>
       </div>
     </div>

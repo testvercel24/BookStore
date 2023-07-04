@@ -19,7 +19,6 @@ export class BookService {
     this.http.get(this.apiUrl).subscribe({
       next: (data: any) => {
         this.bookSubject.next(data);
-        console.log(data);
       },
     });
   }
