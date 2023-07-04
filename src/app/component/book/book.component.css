@@ -82,10 +82,20 @@
 .review-container input {
   width: -webkit-fill-available;
   height: 1.5rem;
+  border: none;
+  border-radius: 0.3rem;
+  outline: 0.1rem #f1f1f1 solid;
+}
+.review-container input:focus,
+.review-container textarea:focus {
+  outline: 0.2rem #8b8b8b solid;
 }
 .review-container textarea {
   width: -webkit-fill-available;
   height: 4.5rem;
+  border: none;
+  border-radius: 0.3rem;
+  outline: 0.1rem #f1f1f1 solid;
 }
 .give-rating img {
   width: 1.5rem;
@@ -101,6 +111,7 @@
 }
 .write-review p {
   font-weight: bold;
+  margin-bottom: 0.4rem;
 }
 .write-review {
   box-shadow: 0.1rem 0.2rem 0.4rem #8b8b8b;
@@ -112,7 +123,6 @@
   width: 10rem;
   height: 2.5rem;
   margin-top: 1rem;
-  left: 17%;
   border: none;
   background: rgba(0, 0, 0, 0.6);
   border-radius: 1rem;
@@ -143,6 +153,25 @@
 }
 .container::-webkit-scrollbar {
   display: none;
+}
+.review h6 {
+  font-size: 1.3rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+.name {
+  margin: 0;
+  font-weight: bold;
+  font-size: 1rem;
+}
+.review-card {
+  border: 0.1rem #f1f1f1 solid;
+  margin-bottom: 0.7rem;
+}
+.submit-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 @media (max-width: 768px) {
   .book-card {
@@ -180,5 +209,10 @@
   .review {
     min-width: 77%;
     max-width: 77%;
+  }
+  .specifications {
+    flex-direction: column;
+    row-gap: 0;
+    column-gap: 0;
   }
 }

@@ -14,11 +14,7 @@ export class BookComponent implements OnInit {
   reviewDetails: ReviewDetails[] = [];
   reviewForm!: FormGroup;
   initialUrl: string = '../../../assets/star.png';
-  constructor(
-    private route: ActivatedRoute,
-    private router: Router,
-    private formBuilder: FormBuilder
-  ) {}
+  constructor(private formBuilder: FormBuilder) {}
   ngOnInit(): void {
     this.reviewForm = this.formBuilder.group({
       name: ['', Validators.required],

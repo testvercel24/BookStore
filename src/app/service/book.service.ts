@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class BookService {
   subcription!: Subscription;
-  private apiUrl = 'https://serverlessnext-1-testvercel24.vercel.app/api/hello';
+  public apiUrl = 'https://serverlessnext-1-testvercel24.vercel.app/api/hello';
   private bookSubject: BehaviorSubject<BookDetails[]> = new BehaviorSubject<
     BookDetails[]
   >([]);

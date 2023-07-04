@@ -22,18 +22,19 @@
           </div>
         </div>
         <div class="description-container">
+          <h6>About Book:</h6>
           <p>{{ book.description }}</p>
         </div>
         <div class="book-specification">
           <h6>Book Specifications</h6>
           <div class="specifications">
             <div>
-              <p>Language: English</p>
-              <p>Publisher: No Publisher</p>
-              <p>publishing Date:</p>
+              <p><b>Language:</b> English</p>
+              <p><b>Publisher:</b> No Publisher</p>
+              <p><b>Publishing Date:</b></p>
             </div>
             <div>
-              <p>Total Pages:150</p>
+              <p><b>Total Pages:</b>150</p>
             </div>
           </div>
         </div>
@@ -103,15 +104,18 @@
               (click)="productRating(5)"
             />
           </div>
-          <button type="submit">Submit</button>
+          <div class="submit-button">
+            <button type="submit">Submit</button>
+          </div>
         </form>
       </div>
       <div class="review">
+        <h6>Reviews</h6>
         <div
           class="review-card"
           *ngFor="let review of reviewDetails | filter : book.title"
         >
-          <h6>{{ review.name }}</h6>
+          <p class="name">{{ review.name }}</p>
           <img
             [src]="
               review.rating >= 1
